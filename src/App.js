@@ -4,42 +4,53 @@ import styled from "styled-components";
 import WatchedList from "./components/WatchedList";
 //un-watchedList
 import UnWatchList from "./components/UnWatchList";
+// States
+import { useState , useEffect} from "react";
+//Searchbar
+import SearchBar from "./components/SearchBar";
+
+
 
 const Styledp = styled.p`
-  display: grid;
-  grid-column-gap: 100px;
-  grid-template-columns: auto auto auto;
-  /* background-color: #2196F3; */
-  padding: 2.5px;
-  margin-top: 35px;
-  padding: 1px;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;
-
+ color: grey;
+text-align:center;
+font-weight: bold;
+padding-bottom:20px;
+margin-top:50px;
+margin-inline-start:45px;
+text-decoration: underline;
 `;
 
 const Styledp1 = styled.p`
-  position: relative;
-  bottom: 150px;
-  right: 3px;
-  padding: 3px;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;
-
+color: grey;
+text-align:center;
+font-weight: bold;
+padding-bottom:20px;
+margin-top:50px;
+margin-inline-start:45px;
+text-decoration: underline;
 `;
 
-function App() {
-  return (
-    <div>
-      <Styledp> Watched List</Styledp>
-      <WatchedList/>
-      <Styledp1>Unwatch List:</Styledp1>
 
-      <UnWatchList/>
+
+
+function App() {
+  
+  const [query, setQuery] =useState("");
+  return (
+  <div>
+    
+    <SearchBar/>
+
+    <Styledp> Watched List</Styledp>
+    
+    <WatchedList/>
+    <Styledp1>Unwatch List:</Styledp1>
+
+    <UnWatchList/>
+   
+  </div>
       
-    </div>
   );
 }
 
